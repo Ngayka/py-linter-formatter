@@ -11,7 +11,7 @@ def format_linter_error(error: dict) -> dict:
 
 
 def format_single_linter_file(file_path: str, errors: list) -> dict:
-    # write your code here
+    return {("failed" if errors else "passed")for error in format_linter_error(errors)}
     pass
 
 
