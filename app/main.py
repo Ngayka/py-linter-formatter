@@ -1,5 +1,10 @@
 def format_linter_error(error: dict) -> dict:
-    # write your code here
+    return [
+        {"line": err["line_number"],
+         "column": err["column_number"],
+         "message": err["text"],
+         "name": err["code"],
+         "source": "flake8"} for file_errors in error.values() for err in file_errors]
     pass
 
 
